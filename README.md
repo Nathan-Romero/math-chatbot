@@ -16,9 +16,9 @@ Before running the code, ensure you have the following installed:
 - **Python 3.x**: Ensure you have Python installed on your system.
 
 ### Python Libraries
-**google-generativeai**: To interface with Google's AI chatbot model.
-**speechrecognition**: To capture and convert voice input to text.
-**pyttsx3**: To convert text responses to speech for voice output.
+- **google-generativeai**: To interface with Google's AI chatbot model.
+- **speechrecognition**: To capture and convert voice input to text.
+- **pyttsx3**: To convert text responses to speech for voice output.
 
 Install these libraries using the following command:
 
@@ -41,6 +41,6 @@ genai.configure(api_key="Enter your key here")
 ```
 
 ## Usage
-- Ensure your microphone is working properly.
-- Run the Python script, and the chatbot will begin listening for voice input.
-- Speak your query aloud, and the chatbot will respond with a math-related answer.
+1. Ensure your microphone is working properly.
+2. Run the Python script, and the chatbot will begin listening for voice input.
+3. Speak your query aloud, and the chatbot will respond with a math-related answer.
