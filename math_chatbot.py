@@ -1,11 +1,13 @@
+# Import necessary libaries to use and access the Math Chatbot API.
 import google.generativeai as genai
 import speech_recognition as sr
 import pyttsx3
 import os
 
+# This is where you input your API key. You can access it when you use the Google Cloud AI Studio and create a project.
 genai.configure(api_key="Enter your key here")
 
-# configure the model to dictate chatbot output
+# Configures the model to dictate chatbot output.
 generation_config = {
     "temperature": 0.05,
     "top_p": 1,
@@ -14,7 +16,7 @@ generation_config = {
     "response_mime_type": "text/plain",
     }
 
-# access the model
+# This is used to access the model.
 model = genai.GenerativeModel(
     model_name="tunedModels/mathchatbot-m4ggorut00v8",
     generation_config=generation_config,
@@ -22,7 +24,7 @@ model = genai.GenerativeModel(
     # See https://ai.google.dev/gemini-api/docs/safety-settings
     )
 
-# chat history
+# Chat history
 chat_session = model.start_chat(
     history=[]
     )
@@ -45,25 +47,25 @@ while True:
     # exceptions at runtime
     try:
         
-        # use the microphone as source for input
+        # Use the microphone as source for input
         with sr.Microphone() as source2:
             
-            # wait for a second to let the recognizer
+            # Wait for a second to let the recognizer
             # adjust the energy threshold based on
             # the surrounding noise level 
             r.adjust_for_ambient_noise(source2, duration=0.2)
             
-            # listens for the user's input 
+            # Listens for the user's input 
             audio2 = r.listen(source2)
 
-            # use Google API to recognize audio
+            # Use Google API to recognize audio
             MyText = r.recognize_google(audio2)
             MyText = MyText.lower()
 
-            # print what the user said through their microphone
+            # Print what the user said through their microphone
             print(MyText)
 
-            # send the user's input to the Google API and the model, then grab its output
+            # Send the user's input to the Google API and the model, then grab its output
             response = chat_session.send_message(MyText)
             SpeakText(response.text)
 
