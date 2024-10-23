@@ -4,9 +4,9 @@
 This project is a voice-activated **Math Chatbot** that uses Google's Generative AI Model and the Speech Recognition library to process spoken math-related queries and respond to them in real time. The bot converts voice input to text, sends it to the chatbot model for processing, and then reads the response aloud using text-to-speech functionality.
 
 ## Key Features
-Converts math-related voice queries to text
-Processes text queries and generates responses using Google's Generative AI Model
-Reads responses aloud using text-to-speech functionality
+- Converts math-related voice queries to text
+- Processes text queries and generates responses using Google's Generative AI Model
+- Reads responses aloud using text-to-speech functionality
 
 ## Requirements
 Before running the code, ensure you have the following installed:
